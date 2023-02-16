@@ -1,6 +1,7 @@
 package com.dev7ex.gungame.api.event;
 
 import com.dev7ex.gungame.api.GunGameApi;
+import com.dev7ex.gungame.api.GunGameApiConfiguration;
 import com.dev7ex.gungame.api.user.GunGameUserProvider;
 import org.bukkit.event.Listener;
 import org.jetbrains.annotations.NotNull;
@@ -15,6 +16,14 @@ public abstract class GunGameListener implements Listener {
 
     public GunGameListener(@NotNull final GunGameApi gunGameApi) {
         this.gunGameApi = gunGameApi;
+    }
+
+    public String getPrefix() {
+        return this.gunGameApi.getConfiguration().getPrefix();
+    }
+
+    public GunGameApiConfiguration getApiConfiguration() {
+        return this.gunGameApi.getConfiguration();
     }
 
     public GunGameUserProvider getUserProvider() {
