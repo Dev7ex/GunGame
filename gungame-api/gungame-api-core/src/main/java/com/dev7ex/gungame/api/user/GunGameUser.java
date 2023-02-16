@@ -10,6 +10,10 @@ public interface GunGameUser {
 
     UUID getUniqueId();
 
+    int getKills();
+
+    int getDeaths();
+
     String getName();
 
     GunGameUserConfiguration getConfiguration();
@@ -24,4 +28,7 @@ public interface GunGameUser {
 
     void setBuildMode(final boolean buildMode);
 
+    void setKills(final int kills);
+
+    void setDeaths(final int deaths);
 }

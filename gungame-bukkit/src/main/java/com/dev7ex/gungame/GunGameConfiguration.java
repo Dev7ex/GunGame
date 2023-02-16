@@ -16,4 +16,9 @@ public class GunGameConfiguration extends DefaultPluginConfiguration {
         super(plugin);
     }
 
+
+    @Override
+    public String getPrefix() {
+        return super.getPrefix();
+    }
 }

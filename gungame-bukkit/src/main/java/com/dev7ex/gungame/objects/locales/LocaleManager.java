@@ -26,7 +26,7 @@ public class LocaleManager {
     public String getString(String path) {
 
         String message = this.file.getString(path);
-        String prefix = String.valueOf(GunGamePlugin.getInstance().getConfig().getString("general.prefix"));
+        String prefix = String.valueOf(GunGamePlugin.getInstance().getConfiguration().getPrefix());
         message = message.replace("{prefix}", prefix);
         message = message.replace("&", "§");
 

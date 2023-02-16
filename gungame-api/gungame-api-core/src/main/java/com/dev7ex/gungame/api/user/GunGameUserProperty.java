@@ -11,7 +11,9 @@ import lombok.Getter;
 public enum GunGameUserProperty {
 
     UNIQUE_ID("unique-id"),
-    NAME("name");
+    NAME("name"),
+    KILLS("kills"),
+    DEATHS("deaths");
 
     private final String storagePath;
 

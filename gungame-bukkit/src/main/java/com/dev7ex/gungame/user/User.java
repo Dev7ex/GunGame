@@ -16,10 +16,13 @@ import java.util.UUID;
  */
 @Getter(AccessLevel.PUBLIC)
 @Setter(AccessLevel.PUBLIC)
+
 public class User implements GunGameUser {
 
     private final UUID uniqueId;
     private final String name;
+    private int level;
+    private int kills;
     private boolean buildMode;
     private boolean spectator;
     private GunGameUserConfiguration configuration;
@@ -32,5 +35,4 @@ public class User implements GunGameUser {
     public Player getEntity() {
         return Bukkit.getPlayer(this.uniqueId);
     }
-
 }
