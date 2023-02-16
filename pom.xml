@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.dev7ex</groupId>
+    <artifactId>gungame</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0-SNAPSHOT</version>
+    <modules>
+        <module>gungame-bukkit</module>
+        <module>gungame-api</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>${project.source.version}</maven.compiler.source>
+        <maven.compiler.target>${project.source.version}</maven.compiler.target>
+
+        <project.source.version>16</project.source.version>
+
+        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+        <maven-shade-plugin.version>3.2.4</maven-shade-plugin.version>
+
+        <dependency.annotations.version>23.0.0</dependency.annotations.version>
+        <dependency.facilis-common.version>1.0.0-SNAPSHOT</dependency.facilis-common.version>
+        <dependency.lombok.version>1.18.24</dependency.lombok.version>
+        <dependency.spigot.version>1.18.1-R0.1-SNAPSHOT</dependency.spigot.version>
+        <dependency-maven-artifact-version>3.6.0</dependency-maven-artifact-version>
+    </properties>
+
+</project>
