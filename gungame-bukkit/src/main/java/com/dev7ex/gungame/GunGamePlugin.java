@@ -4,7 +4,8 @@ import com.dev7ex.common.bukkit.plugin.BukkitPlugin;
 import com.dev7ex.common.bukkit.plugin.PluginProperties;
 import com.dev7ex.gungame.api.GunGameApi;
 import com.dev7ex.gungame.api.GunGameProvider;
-import com.dev7ex.gungame.listener.PlayerConnectionListener;
+import com.dev7ex.gungame.listener.*;
+import com.dev7ex.gungame.objects.locales.LocaleManager;
 import com.dev7ex.gungame.user.UserService;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -24,6 +25,8 @@ public class GunGamePlugin extends BukkitPlugin implements GunGameApi {
 
     private UserService userProvider;
 
+    private LocaleManager localeManager;
+
     @Override
     public void onLoad() {
         super.createDataFolder();
@@ -31,6 +34,8 @@ public class GunGamePlugin extends BukkitPlugin implements GunGameApi {
 
         this.configuration = new GunGameConfiguration(this);
         this.configuration.load();
+
+        localeManager = new LocaleManager();
     }
 
     @Override
@@ -51,6 +56,11 @@ public class GunGamePlugin extends BukkitPlugin implements GunGameApi {
     @Override
     public void registerListeners() {
         super.registerListener(new PlayerConnectionListener(this));
+        super.registerListener(new PlayerDropItemListener(this));
+        super.registerListener(new PlayerPickUpItemListener(this));
+
+        super.registerListener(new BlockBreakListener(this));
+        super.registerListener(new BlockPlaceListener(this));
     }
 
     @Override
@@ -67,4 +77,7 @@ public class GunGamePlugin extends BukkitPlugin implements GunGameApi {
         return JavaPlugin.getPlugin(GunGamePlugin.class);
     }
 
+    public LocaleManager getLocaleManager() {
+        return localeManager;
+    }
 }

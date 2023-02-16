@@ -29,8 +29,6 @@ public class PlayerConnectionListener extends GunGameListener {
         final GunGameUser user = new User(player.getUniqueId(), player.getName());
         final GunGameUserConfiguration userConfiguration = new UserConfiguration(user);
 
-
-
         super.getUserProvider().registerUser(user);
     }
 
@@ -40,5 +38,4 @@ public class PlayerConnectionListener extends GunGameListener {
 
         super.getUserProvider().unregisterUser(player.getUniqueId());
     }
-
 }

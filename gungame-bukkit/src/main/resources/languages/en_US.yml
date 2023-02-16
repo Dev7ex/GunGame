@@ -1,0 +1,4 @@
+no-permission: '{prefix} &cIm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that is in error.'
+
+no-break: '{prefix} &cYou dont can break the Block!'
+no-place: '{prefix} &cYou dont can place the Block!'

@@ -1,4 +1,25 @@
-prefix: '§8[§aGunGame§8]§r'
-no-permission: '§cIm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that is in error.'
+######################################
+#                                    #
+#   Configuration file for GunGame   #
+#                                    #
+#       by Dev7ex and DevSnx         #
+#                                    #
+######################################
 
 config-version: '1.0.0'
+
+#mysql:
+#  host: localhost
+#  port: 3306
+#  name: skyrama
+#  user: skyrama
+#  password: skyrama
+
+# General plugin settings
+general:
+
+  # Language of the plugin (location: './locales/en_US.yml')
+  # Avaible: en_US , de_DE
+  locale: en_US
+
+  prefix: '§8[§aGunGame§8]§r'
