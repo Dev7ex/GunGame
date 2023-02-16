@@ -11,9 +11,9 @@ config-version: '1.0.0'
 #mysql:
 #  host: localhost
 #  port: 3306
-#  name: skyrama
-#  user: skyrama
-#  password: skyrama
+#  name: gungame
+#  user: gungame
+#  password: gungame
 
 # General plugin settings
 general:

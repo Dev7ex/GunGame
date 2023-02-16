@@ -6,6 +6,10 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerDropItemEvent;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * @author DevSnx
+ * @since 16.02.2023
+ */
 public class PlayerDropItemListener extends GunGameListener {
 
     public PlayerDropItemListener(@NotNull final GunGameApi gunGameApi) {

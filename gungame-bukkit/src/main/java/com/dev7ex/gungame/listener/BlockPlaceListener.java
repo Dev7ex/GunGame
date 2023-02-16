@@ -9,6 +9,10 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * @author DevSnx
+ * @since 16.02.2023
+ */
 public class BlockPlaceListener extends GunGameListener {
 
     public BlockPlaceListener(@NotNull final GunGameApi gunGameApi) {

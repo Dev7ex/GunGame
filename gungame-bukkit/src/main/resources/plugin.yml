@@ -12,3 +12,6 @@ prefix: GunGame
 softdepend: []
 version: ${project.version}
 website: ${project.url}
+
+commands:
+  build:

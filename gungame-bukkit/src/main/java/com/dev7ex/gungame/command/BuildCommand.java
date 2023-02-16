@@ -10,14 +10,22 @@ import org.bukkit.command.CommandSender;
         name = "build"
 )
 
-public class CommandBuild extends BukkitCommand {
+/**
+ * @author DevSnx
+ * @since 16.02.2023
+ */
+public class BuildCommand extends BukkitCommand {
 
-    public CommandBuild(BukkitPlugin plugin) {
+    public BuildCommand(BukkitPlugin plugin) {
         super(plugin);
     }
 
     @Override
     public boolean execute(CommandSender commandSender, String[] strings) {
+
+
+
+
         return true;
     }
 }

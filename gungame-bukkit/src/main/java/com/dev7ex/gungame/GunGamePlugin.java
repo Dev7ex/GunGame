@@ -4,6 +4,7 @@ import com.dev7ex.common.bukkit.plugin.BukkitPlugin;
 import com.dev7ex.common.bukkit.plugin.PluginProperties;
 import com.dev7ex.gungame.api.GunGameApi;
 import com.dev7ex.gungame.api.GunGameProvider;
+import com.dev7ex.gungame.command.BuildCommand;
 import com.dev7ex.gungame.listener.*;
 import com.dev7ex.gungame.objects.locales.LocaleManager;
 import com.dev7ex.gungame.user.UserService;
@@ -50,6 +51,8 @@ public class GunGamePlugin extends BukkitPlugin implements GunGameApi {
 
     @Override
     public void registerCommands() {
+
+        super.registerCommand(new BuildCommand(this));
 
     }
 

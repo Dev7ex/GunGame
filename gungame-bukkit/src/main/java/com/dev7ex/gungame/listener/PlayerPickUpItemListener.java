@@ -6,6 +6,10 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerPickupItemEvent;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * @author DevSnx
+ * @since 16.02.2023
+ */
 public class PlayerPickUpItemListener extends GunGameListener {
 
     public PlayerPickUpItemListener(@NotNull final GunGameApi gunGameApi) {

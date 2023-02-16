@@ -5,6 +5,10 @@ import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
 
+/**
+ * @author DevSnx
+ * @since 16.02.2023
+ */
 public class LocaleManager {
 
     private String locale;
