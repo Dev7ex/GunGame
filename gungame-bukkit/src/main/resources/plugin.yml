@@ -1,5 +1,5 @@
 api-version: 1.16
-author: Dev7ex
+authors: [Dev7ex, DevSnx]
 database: false
 depend: [FacilisCommon]
 description: ${project.description}
@@ -12,6 +12,6 @@ prefix: GunGame
 softdepend: []
 version: ${project.version}
 website: ${project.url}
-
 commands:
   build:
+  setspawn:
