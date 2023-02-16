@@ -23,7 +23,7 @@
         <maven-shade-plugin.version>3.2.4</maven-shade-plugin.version>
 
         <dependency.annotations.version>23.0.0</dependency.annotations.version>
-        <dependency.facilis-common.version>1.0.0-SNAPSHOT</dependency.facilis-common.version>
+        <dependency.facilis-common.version>1.0.0-b002-SNAPSHOT</dependency.facilis-common.version>
         <dependency.lombok.version>1.18.24</dependency.lombok.version>
         <dependency.spigot.version>1.18.1-R0.1-SNAPSHOT</dependency.spigot.version>
         <dependency-maven-artifact-version>3.6.0</dependency-maven-artifact-version>
