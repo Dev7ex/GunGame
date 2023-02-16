@@ -3,12 +3,15 @@ package com.dev7ex.gungame.user;
 import com.dev7ex.gungame.GunGamePlugin;
 import com.dev7ex.gungame.api.user.GunGameUser;
 import com.dev7ex.gungame.api.user.GunGameUserConfiguration;
+import com.dev7ex.gungame.equipment.Equipment;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.PlayerInventory;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.UUID;
 
@@ -31,13 +34,13 @@ public class User implements GunGameUser {
     private int deaths;
     private int killStreak;
 
-    public User(final UUID uniqueId, final String name) {
+    public User(@NotNull final UUID uniqueId, @NotNull final String name) {
         this.uniqueId = uniqueId;
         this.name = name;
     }
 
     @Override
-    public void setBuildMode(final boolean buildMode) {
+    public void setBuildMode(@NotNull final boolean buildMode) {
         if (buildMode) {
             this.getEntity().setGameMode(GameMode.CREATIVE);
             this.getEntity().getInventory().clear();
@@ -45,12 +48,12 @@ public class User implements GunGameUser {
             return;
         }
         this.getEntity().setGameMode(GameMode.ADVENTURE);
-        //TODO Set Equipment
+        this.setEquipment(GunGamePlugin.getInstance().getEquipmentService().getEquipment(this.level));
         this.buildMode = false;
     }
 
     @Override
-    public void setSpectator(final boolean spectator) {
+    public void setSpectator(@NotNull final boolean spectator) {
         if (spectator) {
             this.getEntity().setGameMode(GameMode.CREATIVE);
             this.getEntity().getInventory().clear();
@@ -59,7 +62,7 @@ public class User implements GunGameUser {
             return;
         }
         this.getEntity().setGameMode(GameMode.ADVENTURE);
-        //TODO Set Equipment
+        this.setEquipment(GunGamePlugin.getInstance().getEquipmentService().getEquipment(this.level));
         Bukkit.getOnlinePlayers().forEach(player -> player.showPlayer(GunGamePlugin.getInstance(), this.getEntity()));
         this.spectator = false;
     }
@@ -92,6 +95,15 @@ public class User implements GunGameUser {
     @Override
     public void increaseDeaths() {
         this.deaths++;
+    }
+
+    public void setEquipment(@NotNull final Equipment equipment) {
+        final PlayerInventory playerInventory = this.getEntity().getInventory();
+        playerInventory.setItem(0, equipment.getWeapon());
+        playerInventory.setHelmet(equipment.getHelmet());
+        playerInventory.setChestplate(equipment.getChestplate());
+        playerInventory.setLeggings(equipment.getLeggings());
+        playerInventory.setBoots(equipment.getBoots());
     }
 
     public Player getEntity() {
