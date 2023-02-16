@@ -1,0 +1,14 @@
+api-version: 1.16
+author: Dev7ex
+database: false
+depend: [FacilisCommon]
+description: ${project.description}
+libraries: []
+load: POSTWORLD
+loadbefore: []
+main: com.dev7ex.gungame.GunGamePlugin
+name: GunGame
+prefix: GunGame
+softdepend: []
+version: ${project.version}
+website: ${project.url}
