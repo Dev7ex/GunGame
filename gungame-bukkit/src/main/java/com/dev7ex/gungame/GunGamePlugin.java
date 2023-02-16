@@ -5,7 +5,11 @@ import com.dev7ex.common.bukkit.plugin.PluginProperties;
 import com.dev7ex.gungame.api.GunGameApi;
 import com.dev7ex.gungame.api.GunGameProvider;
 import com.dev7ex.gungame.command.BuildCommand;
+import com.dev7ex.gungame.equipment.EquipmentConfiguration;
+import com.dev7ex.gungame.equipment.EquipmentService;
 import com.dev7ex.gungame.listener.*;
+import com.dev7ex.gungame.location.LocationConfiguration;
+import com.dev7ex.gungame.location.LocationService;
 import com.dev7ex.gungame.objects.locales.LocaleManager;
 import com.dev7ex.gungame.user.UserService;
 import lombok.AccessLevel;
@@ -23,8 +27,12 @@ import java.io.File;
 public class GunGamePlugin extends BukkitPlugin implements GunGameApi {
 
     private GunGameConfiguration configuration;
+    private EquipmentConfiguration equipmentConfiguration;
+    private LocationConfiguration locationConfiguration;
 
     private UserService userProvider;
+    private EquipmentService equipmentService;
+    private LocationService locationService;
 
     private LocaleManager localeManager;
 
@@ -35,6 +43,9 @@ public class GunGamePlugin extends BukkitPlugin implements GunGameApi {
 
         this.configuration = new GunGameConfiguration(this);
         this.configuration.load();
+
+        this.equipmentConfiguration = new EquipmentConfiguration(this);
+        this.equipmentConfiguration.createDefaults();
 
         localeManager = new LocaleManager();
     }
@@ -69,6 +80,8 @@ public class GunGamePlugin extends BukkitPlugin implements GunGameApi {
     @Override
     public void registerServices() {
         super.registerService(this.userProvider = new UserService());
+        super.registerService(this.equipmentService = new EquipmentService(this.equipmentConfiguration));
+        super.registerService(this.locationService = new LocationService(this.locationConfiguration));
     }
 
     @Override
