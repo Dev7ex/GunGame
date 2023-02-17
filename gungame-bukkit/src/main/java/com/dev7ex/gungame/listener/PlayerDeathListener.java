@@ -44,10 +44,12 @@ public class PlayerDeathListener extends GunGameListener {
         if(killer instanceof  Player){
 
             killer_user.setDeaths(killer_user.getDeaths()+1);
-            super.getUserProvider().saveUser(killer_user, GunGameUserProperty.KILLS);
+            killer_user.setLevel(killer_user.getLevel()+1);
+            super.getUserProvider().saveUser(killer_user, GunGameUserProperty.KILLS, GunGameUserProperty.LEVEL);
 
             player_user.setDeaths(player_user.getDeaths()+1);
-            super.getUserProvider().saveUser(player_user, GunGameUserProperty.DEATHS);
+            player_user.setLevel(player_user.getLevel()-1);
+            super.getUserProvider().saveUser(player_user, GunGameUserProperty.DEATHS, GunGameUserProperty.LEVEL);
 
         }
 

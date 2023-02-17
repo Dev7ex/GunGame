@@ -12,6 +12,7 @@ public enum GunGameUserProperty {
 
     UNIQUE_ID("unique-id"),
     NAME("name"),
+    LEVEL("level"),
     KILLS("kills"),
     DEATHS("deaths"),
     KILLSTREAK("killstreak");
