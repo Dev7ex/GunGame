@@ -34,6 +34,9 @@ public class UserConfiguration implements GunGameUserConfiguration {
         this.fileConfiguration = YamlConfiguration.loadConfiguration(this.configurationFile);
         this.fileConfiguration.addDefault(GunGameUserProperty.UNIQUE_ID.getStoragePath(), user.getUniqueId().toString());
         this.fileConfiguration.addDefault(GunGameUserProperty.NAME.getStoragePath(), user.getName());
+        this.fileConfiguration.addDefault(GunGameUserProperty.KILLS.getStoragePath(), 0);
+        this.fileConfiguration.addDefault(GunGameUserProperty.DEATHS.getStoragePath(), 0);
+        this.fileConfiguration.addDefault(GunGameUserProperty.KILLSTREAK.getStoragePath(), 0);
         this.fileConfiguration.options().copyDefaults(true);
         this.saveFile();
     }
@@ -46,9 +49,15 @@ public class UserConfiguration implements GunGameUserConfiguration {
             switch (property) {
                 case UNIQUE_ID:
                     userData.put(property, UUID.fromString(Objects.requireNonNull(this.fileConfiguration.getString(property.getStoragePath()))));
+                    break;
 
                 case NAME:
                     userData.put(property, this.fileConfiguration.getString(property.getStoragePath()));
+                    break;
+
+                case KILLS: case DEATHS: case KILLSTREAK:
+                    userData.put(property, this.fileConfiguration.getInt(property.getStoragePath()));
+                    break;
             }
         });
 
@@ -70,6 +79,10 @@ public class UserConfiguration implements GunGameUserConfiguration {
 
                 case NAME:
                     userData.put(property, this.fileConfiguration.getString(property.getStoragePath()));
+                    break;
+
+                case KILLS: case DEATHS: case KILLSTREAK:
+                    userData.put(property, this.fileConfiguration.getInt(property.getStoragePath()));
                     break;
 
                 default:

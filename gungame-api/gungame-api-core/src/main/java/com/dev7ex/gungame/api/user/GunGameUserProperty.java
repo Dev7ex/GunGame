@@ -13,7 +13,8 @@ public enum GunGameUserProperty {
     UNIQUE_ID("unique-id"),
     NAME("name"),
     KILLS("kills"),
-    DEATHS("deaths");
+    DEATHS("deaths"),
+    KILLSTREAK("killstreak");
 
     private final String storagePath;
 

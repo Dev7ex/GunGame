@@ -5,7 +5,12 @@ import com.dev7ex.common.bukkit.plugin.PluginProperties;
 import com.dev7ex.gungame.api.GunGameApi;
 import com.dev7ex.gungame.api.GunGameProvider;
 import com.dev7ex.gungame.command.BuildCommand;
+import com.dev7ex.gungame.command.SetSpawnCommand;
+import com.dev7ex.gungame.equipment.EquipmentConfiguration;
+import com.dev7ex.gungame.equipment.EquipmentService;
 import com.dev7ex.gungame.listener.*;
+import com.dev7ex.gungame.location.LocationConfiguration;
+import com.dev7ex.gungame.location.LocationService;
 import com.dev7ex.gungame.objects.locales.LocaleManager;
 import com.dev7ex.gungame.user.UserService;
 import lombok.AccessLevel;
@@ -26,8 +31,12 @@ import java.util.ArrayList;
 public class GunGamePlugin extends BukkitPlugin implements GunGameApi {
 
     private GunGameConfiguration configuration;
+    private EquipmentConfiguration equipmentConfiguration;
+    private LocationConfiguration locationConfiguration;
 
     private UserService userProvider;
+    private EquipmentService equipmentService;
+    private LocationService locationService;
 
     private LocaleManager localeManager;
 
@@ -40,6 +49,12 @@ public class GunGamePlugin extends BukkitPlugin implements GunGameApi {
 
         this.configuration = new GunGameConfiguration(this);
         this.configuration.load();
+
+        this.equipmentConfiguration = new EquipmentConfiguration(this);
+        this.equipmentConfiguration.createDefaults();
+
+        this.locationConfiguration = new LocationConfiguration(this);
+        this.locationConfiguration.createFile();
 
         localeManager = new LocaleManager();
         buildingPlayers = new ArrayList<>();
@@ -57,9 +72,8 @@ public class GunGamePlugin extends BukkitPlugin implements GunGameApi {
 
     @Override
     public void registerCommands() {
-
         super.registerCommand(new BuildCommand(this));
-
+        super.registerCommand(new SetSpawnCommand(this));
     }
 
     @Override
@@ -67,6 +81,7 @@ public class GunGamePlugin extends BukkitPlugin implements GunGameApi {
         super.registerListener(new PlayerConnectionListener(this));
         super.registerListener(new PlayerDropItemListener(this));
         super.registerListener(new PlayerPickUpItemListener(this));
+        super.registerListener(new PlayerMoveListener(this));
 
         super.registerListener(new BlockBreakListener(this));
         super.registerListener(new BlockPlaceListener(this));
@@ -75,6 +90,8 @@ public class GunGamePlugin extends BukkitPlugin implements GunGameApi {
     @Override
     public void registerServices() {
         super.registerService(this.userProvider = new UserService());
+        super.registerService(this.equipmentService = new EquipmentService(this.equipmentConfiguration));
+        super.registerService(this.locationService = new LocationService(this.locationConfiguration));
     }
 
     @Override

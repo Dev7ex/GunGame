@@ -10,6 +10,8 @@ import java.io.File;
  */
 public interface GunGameApi {
 
+    GunGameApiConfiguration getConfiguration();
+
     GunGameUserProvider getUserProvider();
 
     File getUserFolder();
