@@ -9,12 +9,12 @@ import java.io.File;
  * @author DevSnx
  * @since 16.02.2023
  */
-public class LocaleManager {
+public class LanguageService {
 
     private String locale;
     private YamlConfiguration file;
 
-    public LocaleManager() { this.initialise(); }
+    public LanguageService() { this.initialise(); }
 
     public void initialise() {
 

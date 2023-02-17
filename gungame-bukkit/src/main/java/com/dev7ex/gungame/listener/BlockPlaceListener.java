@@ -26,7 +26,7 @@ public class BlockPlaceListener extends GunGameListener {
         Block block = event.getBlock();
 
         event.setCancelled(true);
-        player.sendMessage(GunGamePlugin.getInstance().getLocaleManager().getString("no-place"));
+        player.sendMessage(GunGamePlugin.getInstance().getLanguageService().getString("no-place"));
 
     }
 }

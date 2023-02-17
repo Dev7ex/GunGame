@@ -7,7 +7,6 @@ import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.block.BlockBreakEvent;
-import org.bukkit.event.block.BlockPlaceEvent;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -27,7 +26,7 @@ public class BlockBreakListener extends GunGameListener {
         Block block = event.getBlock();
 
         event.setCancelled(true);
-        player.sendMessage(GunGamePlugin.getInstance().getLocaleManager().getString("no-break"));
+        player.sendMessage(GunGamePlugin.getInstance().getLanguageService().getString("no-break"));
 
     }
 }

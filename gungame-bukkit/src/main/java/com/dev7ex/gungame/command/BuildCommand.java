@@ -24,23 +24,23 @@ public class BuildCommand extends BukkitCommand {
 
     public boolean execute(@NotNull final CommandSender commandSender, @NotNull final String[] arguments) {
         if (!(commandSender instanceof Player player)) {
-            commandSender.sendMessage(GunGamePlugin.getInstance().getLocaleManager().getString("command-execute-error"));
+            commandSender.sendMessage(GunGamePlugin.getInstance().getLanguageService().getString("command-execute-error"));
             return true;
         }
 
         if (arguments.length != 0) {
-            commandSender.sendMessage(GunGamePlugin.getInstance().getLocaleManager().getString("command-buildmode-wrong"));
+            commandSender.sendMessage(GunGamePlugin.getInstance().getLanguageService().getString("command-buildmode-wrong"));
             return true;
         }
         final GunGameUser user = GunGamePlugin.getInstance().getUserProvider().getUser(player.getUniqueId()).orElseThrow();
 
         if (!user.isBuildMode()) {
-            commandSender.sendMessage(GunGamePlugin.getInstance().getLocaleManager().getString("command-buildmode-on"));
+            commandSender.sendMessage(GunGamePlugin.getInstance().getLanguageService().getString("command-buildmode-on"));
             user.setBuildMode(true);
             return true;
         }
         user.setBuildMode(false);
-        commandSender.sendMessage(GunGamePlugin.getInstance().getLocaleManager().getString("command-buildmode-off"));
+        commandSender.sendMessage(GunGamePlugin.getInstance().getLanguageService().getString("command-buildmode-off"));
         return true;
     }
 

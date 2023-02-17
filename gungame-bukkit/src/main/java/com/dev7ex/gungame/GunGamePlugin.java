@@ -11,13 +11,12 @@ import com.dev7ex.gungame.equipment.EquipmentService;
 import com.dev7ex.gungame.listener.*;
 import com.dev7ex.gungame.location.LocationConfiguration;
 import com.dev7ex.gungame.location.LocationService;
-import com.dev7ex.gungame.objects.locales.LocaleManager;
+import com.dev7ex.gungame.objects.locales.LanguageService;
 import com.dev7ex.gungame.user.UserService;
 import lombok.AccessLevel;
 import lombok.Getter;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.checkerframework.checker.units.qual.A;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -33,14 +32,10 @@ public class GunGamePlugin extends BukkitPlugin implements GunGameApi {
     private GunGameConfiguration configuration;
     private EquipmentConfiguration equipmentConfiguration;
     private LocationConfiguration locationConfiguration;
-
     private UserService userProvider;
     private EquipmentService equipmentService;
     private LocationService locationService;
-
-    private LocaleManager localeManager;
-
-    private ArrayList<Player> buildingPlayers;
+    private LanguageService languageService;
 
     @Override
     public void onLoad() {
@@ -56,8 +51,7 @@ public class GunGamePlugin extends BukkitPlugin implements GunGameApi {
         this.locationConfiguration = new LocationConfiguration(this);
         this.locationConfiguration.createFile();
 
-        localeManager = new LocaleManager();
-        buildingPlayers = new ArrayList<>();
+        languageService = new LanguageService();
     }
 
     @Override
@@ -103,11 +97,7 @@ public class GunGamePlugin extends BukkitPlugin implements GunGameApi {
         return JavaPlugin.getPlugin(GunGamePlugin.class);
     }
 
-    public LocaleManager getLocaleManager() {
-        return localeManager;
-    }
-
-    public ArrayList<Player> getBuildingPlayers() {
-        return buildingPlayers;
+    public LanguageService getLanguageService() {
+        return languageService;
     }
 }
