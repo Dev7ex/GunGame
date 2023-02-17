@@ -10,9 +10,12 @@ import com.dev7ex.gungame.objects.locales.LocaleManager;
 import com.dev7ex.gungame.user.UserService;
 import lombok.AccessLevel;
 import lombok.Getter;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.checkerframework.checker.units.qual.A;
 
 import java.io.File;
+import java.util.ArrayList;
 
 /**
  * @author Dev7ex
@@ -28,6 +31,8 @@ public class GunGamePlugin extends BukkitPlugin implements GunGameApi {
 
     private LocaleManager localeManager;
 
+    private ArrayList<Player> buildingPlayers;
+
     @Override
     public void onLoad() {
         super.createDataFolder();
@@ -37,6 +42,7 @@ public class GunGamePlugin extends BukkitPlugin implements GunGameApi {
         this.configuration.load();
 
         localeManager = new LocaleManager();
+        buildingPlayers = new ArrayList<>();
     }
 
     @Override
@@ -82,5 +88,9 @@ public class GunGamePlugin extends BukkitPlugin implements GunGameApi {
 
     public LocaleManager getLocaleManager() {
         return localeManager;
+    }
+
+    public ArrayList<Player> getBuildingPlayers() {
+        return buildingPlayers;
     }
 }
