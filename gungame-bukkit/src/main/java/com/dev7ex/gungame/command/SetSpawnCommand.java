@@ -23,20 +23,18 @@ public class SetSpawnCommand extends BukkitCommand {
     @Override
     public boolean execute(@NotNull final CommandSender commandSender, @NotNull final String[] arguments) {
         if (!(commandSender instanceof Player player)) {
-            commandSender.sendMessage(super.getConfiguration().getString(""));
+            commandSender.sendMessage(GunGamePlugin.getInstance().getLocaleManager().getString("command-execute-error"));
             return true;
         }
 
         if (arguments.length != 0) {
-            commandSender.sendMessage(super.getConfiguration().getString("")
-                    .replaceAll("%prefix%", super.getPrefix()));
+            commandSender.sendMessage(GunGamePlugin.getInstance().getLocaleManager().getString("command-setspawn-wrong"));
             return true;
         }
         final LocationService locationService = GunGamePlugin.getInstance().getLocationService();
         locationService.cacheLocation("spawn", player.getLocation());
         locationService.getConfiguration().saveLocation("spawn", player.getLocation());
-        commandSender.sendMessage(super.getConfiguration().getString("")
-                .replaceAll("%prefix%", super.getPrefix()));
+        commandSender.sendMessage(GunGamePlugin.getInstance().getLocaleManager().getString("command-setspawn-sucsess"));
         return true;
     }
 

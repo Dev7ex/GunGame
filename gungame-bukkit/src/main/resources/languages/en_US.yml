@@ -3,7 +3,13 @@ no-permission: '{prefix} &cIm sorry, but you do not have permission to perform t
 no-break: '{prefix} &cYou dont can break the Block!'
 no-place: '{prefix} &cYou dont can place the Block!'
 
+command-execute-error: '{prefix} &cYou are not a Player!'
+
 # Settings for /build
 command-buildmode-on: '{prefix} &cBuildmode &aOn!'
 command-buildmode-off: '{prefix} &cBuildmode &4Off!'
 command-buildmode-wrong: '{prefix} &cUse &e/build&c!'
+
+# Settings for /setspawn
+command-setspawn-sucsess: '{prefix} &aSucsess set'
+command-setspawn-wrong: '{prefix} &cUse &e/setspawn&c'
