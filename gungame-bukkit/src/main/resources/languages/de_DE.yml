@@ -1,9 +1,16 @@
+# No Permissions
 no-permission: '{prefix} &cEs tut mir leid, aber Sie sind nicht berechtigt, diesen Befehl auszuführen. Bitte wenden Sie sich an die Serveradministratoren, wenn Sie der Meinung sind, dass dies ein Fehler ist'
+
+# Error Messages
+command-execute-error: '{prefix} &cDu bist kein Spieler!'
+no-spawn-set: '{prefix} &cEs wurde kein Spawn gesetzt!'
+
+# Join Messages
+player-join-game: '{prefix} &a{0} &7hat das Spiel betreten'
+player-quit-game: '{prefix} &c{0} &7hat das Spiel verlassen'
 
 no-break: '{prefix} &cDu kannst keinen block abbauen!'
 no-place: '{prefix} &cDu kannst keinen block platzieren!'
-
-command-execute-error: '{prefix} &cDu bist kein Spieler!'
 
 # Settings for /build
 command-buildmode-on: '{prefix} &cBaumodus &aAn!'
@@ -13,3 +20,10 @@ command-buildmode-wrong: '{prefix} &cNutze &e/build&c!'
 # Settings for /setspawn
 command-setspawn-sucsess: '{prefix} &aErfolgreich gesetzt'
 command-setspawn-wrong: '{prefix} &cNutze &e/setspawn&c'
+
+# Settings for Kill and Death Messages
+# Killer = {0}
+# Death  = {1}
+player-death-player: '{prefix} &c{0} &7hat dich getötet!'
+player-death-broadcast: '{prefix} &a{1} &7wurde von &c{0} &7getötet'
+player-kill-player: '{prefix} &7Du hast &c{0} &7getötet!'

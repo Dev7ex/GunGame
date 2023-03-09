@@ -1,9 +1,16 @@
+# No Permissions
 no-permission: '{prefix} &cIm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that is in error.'
+
+# Error Messages
+command-execute-error: '{prefix} &cYou are not a Player!'
+no-spawn-set: '{prefix} &cNo spawn was set!'
+
+# Join Messages
+player-join-game: '{prefix} &a{0} &7has joined the Game!'
+player-quit-game: '{prefix} &c{0} &7has left the Game!'
 
 no-break: '{prefix} &cYou dont can break the Block!'
 no-place: '{prefix} &cYou dont can place the Block!'
-
-command-execute-error: '{prefix} &cYou are not a Player!'
 
 # Settings for /build
 command-buildmode-on: '{prefix} &cBuildmode &aOn!'
@@ -13,3 +20,10 @@ command-buildmode-wrong: '{prefix} &cUse &e/build&c!'
 # Settings for /setspawn
 command-setspawn-sucsess: '{prefix} &aSucsess set'
 command-setspawn-wrong: '{prefix} &cUse &e/setspawn&c'
+
+# Settings for Kill and Death Messages
+# Killer = {0}
+# Death  = {1}
+player-death-player: '{prefix} &c{0} &7Killed you!}'
+player-death-broadcast: '{prefix} &a{1} &7has killed by &c{0}'
+player-kill-player: '{prefix} &7You have killed &c{0}'

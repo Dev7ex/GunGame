@@ -35,9 +35,12 @@ public class PlayerConnectionListener extends GunGameListener {
         final ParsedMap<GunGameUserProperty, Object> userData = userConfiguration.read();
 
         if (GunGamePlugin.getInstance().getLocationService().getCachedLocation("spawn").isEmpty()) {
-            Bukkit.broadcastMessage(super.getApiConfiguration().getString("")
-                    .replaceAll("%prefix%", super.getPrefix()));
+            Bukkit.broadcastMessage(super.getApiConfiguration().getString("no-spawn-set"));
             return;
+        }
+
+        if(GunGamePlugin.getInstance().getConfiguration().getBoolean("join-quit-messages") == true){
+            event.setJoinMessage(GunGamePlugin.getInstance().getLanguageService().getString("player-join-game").replace("{0}", player.getName()));
         }
 
         player.teleport(GunGamePlugin.getInstance().getLocationService().getCachedLocation("spawn").get());
@@ -58,6 +61,10 @@ public class PlayerConnectionListener extends GunGameListener {
     @EventHandler(priority = EventPriority.NORMAL)
     public void handlePlayerQuit(final PlayerQuitEvent event) {
         final Player player = event.getPlayer();
+
+        if(GunGamePlugin.getInstance().getConfiguration().getBoolean("join-quit-messages") == true){
+            event.setQuitMessage(GunGamePlugin.getInstance().getLanguageService().getString("player-quit-game").replace("{0}", player.getName()));
+        }
 
         super.getUserProvider().unregisterUser(player.getUniqueId());
     }
