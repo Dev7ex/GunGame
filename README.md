@@ -1,8 +1,11 @@
 ##
 ![screenshot](http://devsnx.de/spigot/GunGame/GunGame.png)
 
-## GunGame
- GunGame Minigame for Minecraft
+## Installation
+1. Compile the project or download [this JAR file](link).
+2. Place the plugins into your server plugin's directory.
+3. Restart your server or reload it with the command `/reload`.
+4. You can now configure the plugin in the `config.yml` file and messages in `en_US` or `de_DE`.
 
 ## Todo
 + Levelsystem (✓)
