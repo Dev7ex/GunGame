@@ -20,5 +20,5 @@
 | Command       | Permission  |
 | ------------- |-------------|
 | `/gg` or `/gungame` | gungame.help |
-| `/build` | gungame.command.build    |
-| `/setspawn` | gungame.command.setspawn   |
+| `/gg build` | gungame.command.build    |
+| `/gg setspawn` | gungame.command.setspawn   |
