@@ -2,10 +2,13 @@
  GunGame Minigame for Minecraft
 
 # Todo
-+ Levelsystem
-+ PunkteAPI
-+ Scoreboard
-+ User Stats
++ Levelsystem (✓)
++ PunkteAPI   ()
++ Scoreboard  ()
++ User Stats  ()
++ Placeholder API Support
++ HologramAPI Support
++ MySQL Support
 
 ## Commands
 
