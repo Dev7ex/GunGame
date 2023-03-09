@@ -1,7 +1,10 @@
-# GunGame
+##
+![screenshot](http://devsnx.de/spigot/GunGame/GunGame.png)
+
+## GunGame
  GunGame Minigame for Minecraft
 
-# Todo
+## Todo
 + Levelsystem (✓)
 + PunkteAPI   ()
 + Scoreboard  ()
