@@ -12,8 +12,8 @@
 | Command       | Description  |
 | ------------- |-------------|
 | `/gg` or `/gungame`       | Show the help menu with all the commands. |
-| `/build`      | Can build on the Map.      |
-| `/setspawn` | Set the Player join spawn.      |
+| `/gg build`      | Can build on the Map.      |
+| `/gg setspawn` | Set the Player join spawn.      |
 
 ## Permissions
 
