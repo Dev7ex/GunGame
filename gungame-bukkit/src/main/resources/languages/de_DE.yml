@@ -1,0 +1,15 @@
+no-permission: '{prefix} &cEs tut mir leid, aber Sie sind nicht berechtigt, diesen Befehl auszuführen. Bitte wenden Sie sich an die Serveradministratoren, wenn Sie der Meinung sind, dass dies ein Fehler ist'
+
+no-break: '{prefix} &cDu kannst keinen block abbauen!'
+no-place: '{prefix} &cDu kannst keinen block platzieren!'
+
+command-execute-error: '{prefix} &cDu bist kein Spieler!'
+
+# Settings for /build
+command-buildmode-on: '{prefix} &cBaumodus &aAn!'
+command-buildmode-off: '{prefix} &cBaumodus &4Aus!'
+command-buildmode-wrong: '{prefix} &cNutze &e/build&c!'
+
+# Settings for /setspawn
+command-setspawn-sucsess: '{prefix} &aErfolgreich gesetzt'
+command-setspawn-wrong: '{prefix} &cNutze &e/setspawn&c'

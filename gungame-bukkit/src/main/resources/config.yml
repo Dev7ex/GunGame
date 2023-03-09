@@ -16,3 +16,7 @@ general:
   locale: en_US
 
   prefix: '§8[§aGunGame§8]§r'
+
+game:
+
+  
