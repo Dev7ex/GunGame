@@ -4,6 +4,7 @@ no-permission: '{prefix} &cIm sorry, but you do not have permission to perform t
 # Error Messages
 command-execute-error: '{prefix} &cYou are not a Player!'
 no-spawn-set: '{prefix} &cNo spawn was set!'
+player-has-no-stats: '{prefix} &chas no Stats!'
 
 # Join Messages
 player-join-game: '{prefix} &a{0} &7has joined the Game!'

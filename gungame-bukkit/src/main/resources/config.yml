@@ -14,6 +14,52 @@ general:
   # Avaible: en_US , de_DE
   locale: en_US
 
-  prefix: '§8[§aGunGame§8]§r'
+  prefix: '&8[&aGunGame&8]&r'
 
   join-quit-messages: enable
+
+
+# Show a Scoreboard with Stats!
+scoreboard:
+
+  enable: true
+
+# Placeholders:
+#
+# {kills} - show Kills
+# {deaths} - show Deaths
+# {kd} - show K/D
+# {killstreak} - show Killstreak
+# {placeholder} - show a free line
+
+  title: '&7-= &bGunGame &7=-'
+  scores:
+    - '&7Kills&8:'
+    - '&1&8» {kills}'
+    - '{placeholder}'
+    - '&7Deaths&8:'
+    - '&1&8» {deaths}'
+    - '{placeholder}'
+    - '&7K/D&8:'
+    - '&1&8» {kd}'
+    - '{placeholder}'
+    - '&7Killstreak&8:'
+    - '&1&8» {killstreak}'
+    - '{placeholder}'
+
+# Placeholders:
+# {0} - show the name from Player/Target
+# {kills} - show Kills
+# {deaths} - show Deaths
+# {kd} - show K/D
+# {killstreak} - show Killstreak
+# {level} - show level
+
+stats:
+  message:
+    - '&7-= &eStats from &b{0} &7=-'
+    - '&7Kills&8: &a{kills}'
+    - '&7Deaths&8: &a{deaths}'
+    - '&7K/D&8: &a{kd}'
+    - '&7Level&8: &a{level}'
+    - '&7-----------------'

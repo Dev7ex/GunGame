@@ -6,20 +6,19 @@ import com.dev7ex.gungame.api.GunGameApi;
 import com.dev7ex.gungame.api.GunGameProvider;
 import com.dev7ex.gungame.command.BuildCommand;
 import com.dev7ex.gungame.command.SetSpawnCommand;
+import com.dev7ex.gungame.command.StatsCommand;
 import com.dev7ex.gungame.equipment.EquipmentConfiguration;
 import com.dev7ex.gungame.equipment.EquipmentService;
 import com.dev7ex.gungame.listener.*;
 import com.dev7ex.gungame.location.LocationConfiguration;
 import com.dev7ex.gungame.location.LocationService;
 import com.dev7ex.gungame.objects.locales.LanguageService;
+import com.dev7ex.gungame.objects.scoreboard.ScoreboardService;
 import com.dev7ex.gungame.user.UserService;
 import lombok.AccessLevel;
 import lombok.Getter;
-import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
-
 import java.io.File;
-import java.util.ArrayList;
 
 /**
  * @author Dev7ex
@@ -37,6 +36,8 @@ public class GunGamePlugin extends BukkitPlugin implements GunGameApi {
     private LocationService locationService;
     private LanguageService languageService;
 
+    private ScoreboardService scoreboardService;
+
     @Override
     public void onLoad() {
         super.createDataFolder();
@@ -52,6 +53,7 @@ public class GunGamePlugin extends BukkitPlugin implements GunGameApi {
         this.locationConfiguration.createFile();
 
         languageService = new LanguageService();
+        scoreboardService = new ScoreboardService();
     }
 
     @Override
@@ -67,6 +69,7 @@ public class GunGamePlugin extends BukkitPlugin implements GunGameApi {
     @Override
     public void registerCommands() {
         super.registerCommand(new BuildCommand(this));
+        super.registerCommand(new StatsCommand(this));
         super.registerCommand(new SetSpawnCommand(this));
     }
 
@@ -99,5 +102,9 @@ public class GunGamePlugin extends BukkitPlugin implements GunGameApi {
 
     public LanguageService getLanguageService() {
         return languageService;
+    }
+
+    public ScoreboardService getScoreboardService() {
+        return scoreboardService;
     }
 }

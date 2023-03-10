@@ -1,4 +1,4 @@
-api-version: 1.16
+api-version: 1.19
 authors: [Dev7ex, DevSnx]
 database: false
 depend: [FacilisCommon]
@@ -15,3 +15,4 @@ website: ${project.url}
 commands:
   build:
   setspawn:
+  stats:

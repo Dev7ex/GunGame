@@ -10,15 +10,15 @@ import org.bukkit.entity.Player;
 import com.dev7ex.gungame.api.user.GunGameUser;
 import org.jetbrains.annotations.NotNull;
 
-@CommandProperties(name = "build", permission = "gungame.command.build")
 
 /**
  * @author DevSnx
  * @since 16.02.2023
  */
+@CommandProperties(name = "build", permission = "gungame.command.build")
 public class BuildCommand extends BukkitCommand {
 
-    public BuildCommand(BukkitPlugin plugin) {
+    public BuildCommand(@NotNull final BukkitPlugin plugin) {
         super(plugin);
     }
 
