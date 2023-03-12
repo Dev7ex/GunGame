@@ -86,13 +86,11 @@ public class GunGamePlugin extends BukkitPlugin implements GunGameApi {
 
     @Override
     public void registerListeners() {
+        super.registerListener(new PlayerBuildListener(this));
         super.registerListener(new PlayerConnectionListener(this));
         super.registerListener(new PlayerDropItemListener(this));
         super.registerListener(new PlayerPickUpItemListener(this));
         super.registerListener(new PlayerMoveListener(this));
-
-        super.registerListener(new BlockBreakListener(this));
-        super.registerListener(new BlockPlaceListener(this));
     }
 
     @Override
