@@ -12,7 +12,7 @@ import com.dev7ex.gungame.equipment.EquipmentService;
 import com.dev7ex.gungame.listener.*;
 import com.dev7ex.gungame.location.LocationConfiguration;
 import com.dev7ex.gungame.location.LocationService;
-import com.dev7ex.gungame.objects.locales.LanguageService;
+import com.dev7ex.gungame.objects.language.LanguageService;
 import com.dev7ex.gungame.objects.scoreboard.ScoreboardService;
 import com.dev7ex.gungame.user.UserService;
 import lombok.AccessLevel;

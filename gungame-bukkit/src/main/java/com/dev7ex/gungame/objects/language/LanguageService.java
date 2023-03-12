@@ -1,4 +1,4 @@
-package com.dev7ex.gungame.objects.locales;
+package com.dev7ex.gungame.objects.language;
 
 import com.dev7ex.gungame.GunGamePlugin;
 import org.bukkit.configuration.file.YamlConfiguration;

@@ -4,7 +4,8 @@ no-permission: '{prefix} &cEs tut mir leid, aber Sie sind nicht berechtigt, dies
 # Error Messages
 command-execute-error: '{prefix} &cDu bist kein Spieler!'
 no-spawn-set: '{prefix} &cEs wurde kein Spawn gesetzt!'
-player-has-no-stats: '{prefix} &chat keine Statistiken!'
+player-has-no-stats: '{prefix} &cDu hast keine Statistiken!'
+other-has-no-stats: '{prefix} {0} &chat keine Statistiken!'
 
 # Join Messages
 player-join-game: '{prefix} &a{0} &7hat das Spiel betreten'

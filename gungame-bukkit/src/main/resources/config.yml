@@ -56,7 +56,7 @@ scoreboard:
 # {level} - show level
 
 stats:
-  message:
+  messages:
     - '&7-= &eStats from &b{0} &7=-'
     - '&7Kills&8: &a{kills}'
     - '&7Deaths&8: &a{deaths}'
