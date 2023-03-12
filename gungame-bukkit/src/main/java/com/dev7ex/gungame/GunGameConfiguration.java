@@ -21,5 +21,4 @@ public class GunGameConfiguration extends DefaultPluginConfiguration implements 
     public String getPrefix() {
         return super.getPrefix();
     }
-
 }

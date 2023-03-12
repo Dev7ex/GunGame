@@ -30,10 +30,9 @@ public class LanguageService {
     public String getString(String path) {
 
         String message = this.file.getString(path);
-        String prefix = String.valueOf(GunGamePlugin.getInstance().getConfiguration().getPrefix());
+        String prefix = String.valueOf(GunGamePlugin.getInstance().getConfiguration().getString("general.prefix"));
         message = message.replace("{prefix}", prefix);
         message = message.replace("&", "§");
-
         return message;
 
     }

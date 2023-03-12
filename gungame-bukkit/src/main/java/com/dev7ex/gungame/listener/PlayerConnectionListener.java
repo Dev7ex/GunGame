@@ -39,7 +39,7 @@ public class PlayerConnectionListener extends GunGameListener {
             return;
         }
 
-        if(GunGamePlugin.getInstance().getConfiguration().getBoolean("join-quit-messages") == true){
+        if(GunGamePlugin.getInstance().getConfiguration().getBoolean("general.join-quit-messages") == true){
             event.setJoinMessage(GunGamePlugin.getInstance().getLanguageService().getString("player-join-game").replace("{0}", player.getName()));
         }
 
@@ -62,7 +62,7 @@ public class PlayerConnectionListener extends GunGameListener {
     public void handlePlayerQuit(final PlayerQuitEvent event) {
         final Player player = event.getPlayer();
 
-        if(GunGamePlugin.getInstance().getConfiguration().getBoolean("join-quit-messages") == true){
+        if(GunGamePlugin.getInstance().getConfiguration().getBoolean("general.join-quit-messages") == true){
             event.setQuitMessage(GunGamePlugin.getInstance().getLanguageService().getString("player-quit-game").replace("{0}", player.getName()));
         }
 
