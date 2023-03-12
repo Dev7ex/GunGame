@@ -18,8 +18,8 @@ public class LanguageService {
 
     public void initialise() {
 
-        this.locale = (String) GunGamePlugin.getInstance().getConfig().get("general.locale");
-        this.file = YamlConfiguration.loadConfiguration(new File(GunGamePlugin.getInstance().getDataFolder() + "/locales/" + this.getLocale() + ".yml"));
+        this.locale = (String) GunGamePlugin.getInstance().getConfig().get("general.language");
+        this.file = YamlConfiguration.loadConfiguration(new File(GunGamePlugin.getInstance().getDataFolder() + "/languages/" + this.getLocale() + ".yml"));
 
     }
 

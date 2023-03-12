@@ -52,6 +52,17 @@ public class GunGamePlugin extends BukkitPlugin implements GunGameApi {
         this.locationConfiguration = new LocationConfiguration(this);
         this.locationConfiguration.createFile();
 
+        // Load Languages  when not exists
+        File file = new File(GunGamePlugin.getInstance().getDataFolder()+"/languages",  "en_US.yml");
+        File file2 = new File(GunGamePlugin.getInstance().getDataFolder()+"/languages",  "de_DE.yml");
+
+        if(!file.exists()){
+            saveResource("languages/en_US.yml", false);
+        }
+        if(!file2.exists()){
+            saveResource("languages/de_DE.yml", false);
+        }
+
         languageService = new LanguageService();
         scoreboardService = new ScoreboardService();
     }
