@@ -35,7 +35,7 @@ public class PlayerConnectionListener extends GunGameListener {
         final ParsedMap<GunGameUserProperty, Object> userData = userConfiguration.read();
 
         if (GunGamePlugin.getInstance().getLocationService().getCachedLocation("spawn").isEmpty()) {
-            Bukkit.broadcastMessage(super.getApiConfiguration().getString("no-spawn-set"));
+            //Bukkit.broadcastMessage(super.getApiConfiguration().getString("no-spawn-set"));
             return;
         }
 
